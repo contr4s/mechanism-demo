@@ -13,7 +13,8 @@ namespace MechanismSimulation
         {
             Container.BindInstance(config).AsSingle();
             Container.Bind<IMechanism>().FromInstance(reductor).AsSingle();
-            Container.BindInterfacesAndSelfTo<MechanismSimulation>().AsSingle();
+            Container.BindInterfacesTo<MechanismSimulation>().AsSingle();
+            Container.BindInterfacesTo<SimulationInitializer>().AsSingle();
         }
     }
 }

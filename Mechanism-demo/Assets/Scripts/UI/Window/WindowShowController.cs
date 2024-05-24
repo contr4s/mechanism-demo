@@ -11,20 +11,25 @@ namespace UI.Window
 {
     public class WindowShowController : IWindowShowController, IDisposable
     {
-        private readonly Dictionary<Type, WindowView> _windowViews;
         private readonly Dictionary<Type, IWindowShowProcessor> _showProcessors;
         private readonly BinderAggregator _binderAggregator;
 
         private CancellationTokenSource _cancellationTokenSource;
-        private readonly List<WindowView> _openedWindows;
         
-        public WindowShowController(WindowViewsData windowViewsData, IEnumerable<IWindowShowProcessor> showProcessors, BinderAggregator binderAggregator)
+        private Dictionary<Type, WindowView> _windowViews;
+        private List<WindowView> _openedWindows;
+        
+        public WindowShowController(IEnumerable<IWindowShowProcessor> showProcessors, BinderAggregator binderAggregator)
         {
             _binderAggregator = binderAggregator;
             _showProcessors = showProcessors.ToDictionary(x => x.GetType());
-            _windowViews = windowViewsData.WindowViews.ToDictionary(x => x.GetType());
-            _openedWindows = new List<WindowView>(windowViewsData.WindowViews);
             _binderAggregator.Init(this);
+        }
+
+        public void Setup(ICollection<WindowView> windows)
+        {
+            _windowViews = windows.ToDictionary(x => x.GetType());
+            _openedWindows = new List<WindowView>(windows);
         }
 
         public void Show<TWindow, TProcessor>() where TWindow : WindowView 

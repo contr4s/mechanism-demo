@@ -14,5 +14,6 @@ namespace UI.Common
         Type IBinder.ServiceModelType => typeof(TModel);
         
         void Bind(TView view, TModel model);
+        void Unbind(TView view);
     }
 }

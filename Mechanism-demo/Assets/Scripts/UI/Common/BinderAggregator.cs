@@ -10,8 +10,6 @@ namespace UI.Common
     public class BinderAggregator
     {
         private readonly Dictionary<(Type, Type), IBinder> _binders;
-        private readonly Dictionary<Type, IBinder> _bindersByViewType;
-        private readonly Dictionary<Type, IBinder> _bindersByModelType;
         
         public BinderAggregator(IEnumerable<IBinder> binders)
         {

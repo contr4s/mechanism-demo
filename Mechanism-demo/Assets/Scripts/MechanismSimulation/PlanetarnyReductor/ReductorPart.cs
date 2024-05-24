@@ -8,5 +8,6 @@ namespace MechanismSimulation.PlanetarnyReductor
         [field: SerializeField] public Vector3 BlastedOffset { get; private set; }
         
         public GameObject View => gameObject;
+        public string Name => View.name;
     }
 }

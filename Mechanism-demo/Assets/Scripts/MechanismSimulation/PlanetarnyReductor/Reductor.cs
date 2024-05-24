@@ -9,6 +9,7 @@ namespace MechanismSimulation.PlanetarnyReductor
     {
         [SerializeField] private ReductorPart[] parts;
         [SerializeField] private float rotationSpeed;
+        [field: SerializeField] public string Name { get; private set; }
 
         public IReadOnlyCollection<IMechanismPart> Parts => parts;
         

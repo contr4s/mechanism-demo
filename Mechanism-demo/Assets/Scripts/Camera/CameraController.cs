@@ -6,15 +6,13 @@ using Zenject;
 
 namespace Camera
 {
-    public class CameraController : ICameraController, IInitializable
+    public class CameraController : ICameraController
     {
         private readonly CinemachineBrain _cinemachineBrain;
-        private readonly CameraSettingsConfig _cameraSettingsConfig;
         
-        public CameraController(CinemachineBrain cinemachineBrain, CameraSettingsConfig cameraSettingsConfig)
+        public CameraController(CinemachineBrain cinemachineBrain)
         {
             _cinemachineBrain = cinemachineBrain;
-            _cameraSettingsConfig = cameraSettingsConfig;
         }
 
         public void ApplyOnCurrentCamera<T>(ICameraSettings<T> settings) where T : ICinemachineCamera
@@ -26,11 +24,6 @@ namespace Camera
             }
             
             settings.Apply(camera);
-        }
-
-        void IInitializable.Initialize()
-        {
-            ApplyOnCurrentCamera(new FreeLookCamSettings(_cameraSettingsConfig.DefaultParameters));
         }
     }
 }

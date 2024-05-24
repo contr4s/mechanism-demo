@@ -7,44 +7,43 @@ using Zenject;
 
 namespace MechanismSimulation
 {
-    public class MechanismSimulation : IInitializable, IDisposable
+    public class MechanismSimulation : IInitializable, IDisposable, IMechanismSimulation
     {
-        private readonly IMechanism _mechanism;
         private readonly MechanismSimulationConfig _config;
         
-        private CancellationTokenSource _cancellationTokenSource;
+        private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+        private bool _isBlast;
         
+        public IMechanism Mechanism { get; }
+
         public MechanismSimulation(IMechanism mechanism, MechanismSimulationConfig config)
         {
-            _mechanism = mechanism;
+            Mechanism = mechanism;
             _config = config;
         }
-
-        public void ShowMechanism()
-        {
-            _mechanism.ShowAllParts();
-        }
         
-        public void SwitchBlastState(bool isBlast)
+        public void SwitchBlastState()
         {
-            _cancellationTokenSource = _cancellationTokenSource?.Refresh();
-            _mechanism.SwitchBlastState(isBlast, _config.BlastSpeed, _cancellationTokenSource.Token).Forget();
+            Mechanism.ShowAllParts();
+            _cancellationTokenSource = _cancellationTokenSource.Refresh();
+            _isBlast = !_isBlast;
+            Mechanism.SwitchBlastState(_isBlast, _config.BlastSpeed, _cancellationTokenSource.Token).Forget();
         }
         
         public void ShowMechanismPart(IMechanismPart mechanismPart)
         {
-            _mechanism.HideAllParts();
+            Mechanism.HideAllParts();
             mechanismPart.View.SetActive(true);
         }
 
-        public void Initialize()
+        void IInitializable.Initialize()
         {
-            _mechanism.DoWork();
+            Mechanism.DoWork();
         }
 
-        public void Dispose()
+        void IDisposable.Dispose()
         {
-            _cancellationTokenSource?.Dispose();
+            _cancellationTokenSource.Dispose();
         }
     }
 }

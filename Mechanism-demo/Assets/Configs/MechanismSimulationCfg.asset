@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f55cb4c46a9441d5947c56b2a7fb0ea4, type: 3}
   m_Name: MechanismSimulationCfg
   m_EditorClassIdentifier: 
-  <BlastSpeed>k__BackingField: 40
+  <BlastSpeed>k__BackingField: 10

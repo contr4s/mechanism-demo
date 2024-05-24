@@ -1,6 +1,9 @@
-﻿using System.Threading;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UI.Animation;
+using UniRx;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,7 +14,15 @@ namespace UI.Window
         [SerializeField] private AppearAnimation _animation;
 
         private bool _hasAnimation;
+        private readonly CompositeDisposable _compositeDisposable = new CompositeDisposable();
+        
         public bool IsShown { get; private set; }
+        public ICollection<IDisposable> BindingContainer => _compositeDisposable;
+
+        public void ResetBindings()
+        {
+            _compositeDisposable.Clear();
+        }
 
         public virtual void InstantlyShow()
         {
