@@ -23,11 +23,13 @@ namespace UI.Window.Common
             }
 
             BindInternal(view, model);
+            _bindings.Add(view, model);
         }
 
         public void Unbind(TWindow view)
         {
             view.ResetBindings();
+            _bindings.Remove(view);
         }
 
         protected abstract void BindInternal(TWindow view, TModel model);

@@ -6,5 +6,6 @@ namespace MechanismSimulation
     public class MechanismSimulationConfig : ScriptableObject
     {
         [field: SerializeField] public float BlastSpeed { get; private set; }
+        [field: SerializeField] public float CameraSmoothSpeed { get; private set; }
     }
 }

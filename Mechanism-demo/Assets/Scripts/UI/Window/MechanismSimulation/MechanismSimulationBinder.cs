@@ -1,4 +1,6 @@
-﻿using MechanismSimulation;
+﻿using Camera;
+using Camera.Settings;
+using MechanismSimulation;
 using MechanismSimulation.Extensions;
 using ObjectPool;
 using UI.Elements;
@@ -10,7 +12,7 @@ namespace UI.Window.MechanismSimulation
     public class MechanismSimulationBinder : WindowBinder<MechanismSimulationWindow, IMechanismSimulation>
     {
         private readonly IPoolingObjectsProvider _poolingObjectsProvider;
-        
+
         public MechanismSimulationBinder(IPoolingObjectsProvider poolingObjectsProvider)
         {
             _poolingObjectsProvider = poolingObjectsProvider;
@@ -37,7 +39,7 @@ namespace UI.Window.MechanismSimulation
                 view.MechanismPartButtonGroup.AddButton(partButton, 
                                                         view.BindingContainer,
                                                         AfterSelect,
-                                                        model.Mechanism.ShowAllParts);
+                                                        model.ShowMechanism);
             }
             
             return;
@@ -48,7 +50,10 @@ namespace UI.Window.MechanismSimulation
                 model.SwitchBlastState();
             }
 
-            void AfterSelect(MechanismPartButton x) => model.ShowMechanismPart(x.MechanismPart);
+            void AfterSelect(MechanismPartButton x)
+            {
+                model.ShowMechanismPart(x.MechanismPart);
+            }
         }
     }
 }

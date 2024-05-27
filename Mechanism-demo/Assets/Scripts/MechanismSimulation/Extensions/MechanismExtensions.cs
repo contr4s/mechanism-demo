@@ -25,6 +25,8 @@ namespace MechanismSimulation.Extensions
         
         public static async UniTask SwitchBlastState(this IMechanism mechanism, bool isBlast, float speed, CancellationToken ct)
         {
+            mechanism.SwitchBlastState();
+            
             bool flag = true;
             while (flag && !ct.IsCancellationRequested)
             {
@@ -44,7 +46,6 @@ namespace MechanismSimulation.Extensions
                 
                 await UniTask.Yield(PlayerLoopTiming.Update, ct);
             }
-            
         }
     }
 }

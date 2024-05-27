@@ -282,6 +282,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <BlastedOffset>k__BackingField: {x: 0, y: 0.231, z: 0}
+  <CameraParameters>k__BackingField:
+    <Fov>k__BackingField: 22
+    <Offsets>k__BackingField:
+      <Top>k__BackingField: {x: 0, y: 0.231, z: 0}
+      <Middle>k__BackingField: {x: 0, y: 0.231, z: 0}
+      <Bottom>k__BackingField: {x: 0, y: 0.231, z: 0}
 --- !u!1 &859258561118271052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2807257961504344752, guid: a160eafed56c19d4ca8d7a9fdf4379cb,
@@ -302,6 +308,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <BlastedOffset>k__BackingField: {x: 0, y: -0.221, z: 0}
+  <CameraParameters>k__BackingField:
+    <Fov>k__BackingField: 35
+    <Offsets>k__BackingField:
+      <Top>k__BackingField: {x: 0, y: 0.05, z: 0}
+      <Middle>k__BackingField: {x: 0, y: 0.05, z: 0}
+      <Bottom>k__BackingField: {x: 0, y: 0.05, z: 0}
 --- !u!1 &1321283539605378861 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4562134625128786895, guid: a160eafed56c19d4ca8d7a9fdf4379cb,
@@ -322,6 +334,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <BlastedOffset>k__BackingField: {x: 0, y: 0.365, z: 0}
+  <CameraParameters>k__BackingField:
+    <Fov>k__BackingField: 35
+    <Offsets>k__BackingField:
+      <Top>k__BackingField: {x: 0, y: 0.14, z: 0}
+      <Middle>k__BackingField: {x: 0, y: 0.14, z: 0}
+      <Bottom>k__BackingField: {x: 0, y: 0.14, z: 0}
 --- !u!1 &3597627743192730829 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2086440389663240239, guid: a160eafed56c19d4ca8d7a9fdf4379cb,
@@ -342,6 +360,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <BlastedOffset>k__BackingField: {x: 0, y: -0.042, z: 0}
+  <CameraParameters>k__BackingField:
+    <Fov>k__BackingField: 25
+    <Offsets>k__BackingField:
+      <Top>k__BackingField: {x: 0, y: 0, z: 0}
+      <Middle>k__BackingField: {x: 0, y: 0, z: 0}
+      <Bottom>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!1 &4528866691431075455 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7800211022410059107, guid: a160eafed56c19d4ca8d7a9fdf4379cb,
@@ -362,6 +386,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <BlastedOffset>k__BackingField: {x: 0, y: 0.104, z: 0}
+  <CameraParameters>k__BackingField:
+    <Fov>k__BackingField: 27
+    <Offsets>k__BackingField:
+      <Top>k__BackingField: {x: 0, y: 0.05, z: 0}
+      <Middle>k__BackingField: {x: 0, y: 0.05, z: 0}
+      <Bottom>k__BackingField: {x: 0, y: 0.05, z: 0}
 --- !u!1 &5342502142067520591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1784076081058101075, guid: a160eafed56c19d4ca8d7a9fdf4379cb,
@@ -382,6 +412,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <BlastedOffset>k__BackingField: {x: 0, y: 0.048, z: 0}
+  <CameraParameters>k__BackingField:
+    <Fov>k__BackingField: 20
+    <Offsets>k__BackingField:
+      <Top>k__BackingField: {x: 0, y: 0.05, z: 0}
+      <Middle>k__BackingField: {x: 0, y: 0.05, z: 0}
+      <Bottom>k__BackingField: {x: 0, y: 0.05, z: 0}
 --- !u!1 &5827926686114029311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 146044467199548899, guid: a160eafed56c19d4ca8d7a9fdf4379cb,
@@ -402,6 +438,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <BlastedOffset>k__BackingField: {x: 0, y: 0.215, z: 0}
+  <CameraParameters>k__BackingField:
+    <Fov>k__BackingField: 25
+    <Offsets>k__BackingField:
+      <Top>k__BackingField: {x: 0, y: 0.14, z: 0}
+      <Middle>k__BackingField: {x: 0, y: 0.14, z: 0}
+      <Bottom>k__BackingField: {x: 0, y: 0.14, z: 0}
 --- !u!1 &5988273512212607030 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9080187232993692886, guid: a160eafed56c19d4ca8d7a9fdf4379cb,
@@ -422,6 +464,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <BlastedOffset>k__BackingField: {x: 0, y: -0.298, z: 0}
+  <CameraParameters>k__BackingField:
+    <Fov>k__BackingField: 35
+    <Offsets>k__BackingField:
+      <Top>k__BackingField: {x: 0, y: 0, z: 0}
+      <Middle>k__BackingField: {x: 0, y: 0, z: 0}
+      <Bottom>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!1 &6255731075228051891 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8919664252275873105, guid: a160eafed56c19d4ca8d7a9fdf4379cb,
@@ -442,6 +490,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <BlastedOffset>k__BackingField: {x: 0, y: 0.184, z: 0}
+  <CameraParameters>k__BackingField:
+    <Fov>k__BackingField: 35
+    <Offsets>k__BackingField:
+      <Top>k__BackingField: {x: 0, y: 0.05, z: 0}
+      <Middle>k__BackingField: {x: 0, y: 0.05, z: 0}
+      <Bottom>k__BackingField: {x: 0, y: 0.05, z: 0}
 --- !u!1 &6784469479817657933 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a160eafed56c19d4ca8d7a9fdf4379cb,
@@ -472,6 +526,8 @@ MonoBehaviour:
   - {fileID: 8243213306317079609}
   - {fileID: 1428967025891470017}
   rotationSpeed: 100
+  defaultCameraFov: 40
+  blastCameraFov: 60
   <Name>k__BackingField: Planetarny Reductor
 --- !u!1 &8451439997663774004 stripped
 GameObject:
@@ -493,3 +549,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOffset>k__BackingField: {x: 0, y: 0, z: 0}
   <BlastedOffset>k__BackingField: {x: 0, y: -0.365, z: 0}
+  <CameraParameters>k__BackingField:
+    <Fov>k__BackingField: 20
+    <Offsets>k__BackingField:
+      <Top>k__BackingField: {x: 0, y: 0, z: 0}
+      <Middle>k__BackingField: {x: 0, y: 0, z: 0}
+      <Bottom>k__BackingField: {x: 0, y: 0, z: 0}

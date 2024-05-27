@@ -649,8 +649,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cinemachineBrain: {fileID: 330585548}
-  _cameraSettingsConfig: {fileID: 11400000, guid: 156458b32feb39f42bcc5bb9d251011a,
-    type: 2}
 --- !u!4 &1052554026
 Transform:
   m_ObjectHideFlags: 0

@@ -7,5 +7,6 @@ namespace Camera.Settings
     public class CameraParameters
     {
         [field: SerializeField] public float Fov { get; private set; }
+        [field: SerializeField] public Offsets Offsets { get; private set; }
     }
 }

@@ -6,5 +6,6 @@
         
         void SwitchBlastState();
         void ShowMechanismPart(IMechanismPart mechanismPart);
+        void ShowMechanism();
     }
 }

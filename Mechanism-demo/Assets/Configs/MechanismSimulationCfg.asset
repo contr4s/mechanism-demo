@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: MechanismSimulationCfg
   m_EditorClassIdentifier: 
   <BlastSpeed>k__BackingField: 10
+  <CameraSmoothSpeed>k__BackingField: 2

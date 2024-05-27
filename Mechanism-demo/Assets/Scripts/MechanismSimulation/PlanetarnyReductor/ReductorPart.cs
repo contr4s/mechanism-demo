@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Camera.Settings;
+using UnityEngine;
 
 namespace MechanismSimulation.PlanetarnyReductor
 {
@@ -6,7 +7,8 @@ namespace MechanismSimulation.PlanetarnyReductor
     {
         [field: SerializeField] public Vector3 StartOffset { get; private set; }
         [field: SerializeField] public Vector3 BlastedOffset { get; private set; }
-        
+        [field: SerializeField] public CameraParameters CameraParameters { get; private set; }
+
         public GameObject View => gameObject;
         public string Name => View.name;
     }
