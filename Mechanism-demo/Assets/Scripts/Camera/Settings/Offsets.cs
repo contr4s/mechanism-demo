@@ -8,6 +8,8 @@ namespace Camera.Settings
     {
         public const int Count = 3;
         
+        public static Offsets Zero => new Offsets {Top = Vector3.zero, Middle = Vector3.zero, Bottom = Vector3.zero};
+        
         [field: SerializeField] public Vector3 Top { get; private set; }
         [field: SerializeField] public Vector3 Middle { get; private set; }
         [field: SerializeField] public Vector3 Bottom { get; private set; }
@@ -21,6 +23,7 @@ namespace Camera.Settings
                                                                    "There are only 3 dimensions of offsets")
                 };
 
-        public static Offsets Zero => new Offsets {Top = Vector3.zero, Middle = Vector3.zero, Bottom = Vector3.zero};
+        public Offsets Move(Vector3 vector) =>
+                new Offsets {Top = Top + vector, Middle = Middle + vector, Bottom = Bottom + vector};
     }
 }

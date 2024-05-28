@@ -23,7 +23,7 @@ namespace MechanismSimulation.Extensions
             }
         }
         
-        public static async UniTask SwitchBlastState(this IMechanism mechanism, bool isBlast, float speed, CancellationToken ct)
+        public static async UniTask SwitchBlastState(this IMechanism mechanism, float speed, CancellationToken ct)
         {
             mechanism.SwitchBlastState();
             
@@ -34,7 +34,7 @@ namespace MechanismSimulation.Extensions
                 foreach (IMechanismPart part in mechanism.Parts)
                 {
                     var pos = part.View.transform.localPosition;
-                    var targetPos = isBlast ? part.BlastedOffset : part.StartOffset;
+                    var targetPos = mechanism.BlastState ? part.BlastedOffset : part.StartOffset;
                     if (pos.Approximately(targetPos))
                     {
                         continue;

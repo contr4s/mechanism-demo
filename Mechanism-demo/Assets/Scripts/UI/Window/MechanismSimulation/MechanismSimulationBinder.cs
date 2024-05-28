@@ -1,25 +1,38 @@
-﻿using Camera;
-using Camera.Settings;
+﻿using System;
+using System.Threading;
+using Cysharp.Threading.Tasks;
+using Extensions;
 using MechanismSimulation;
-using MechanismSimulation.Extensions;
 using ObjectPool;
+using Scene;
 using UI.Elements;
 using UI.Window.Common;
+using UI.Window.ShowProcessors;
 using UniRx;
 
 namespace UI.Window.MechanismSimulation
 {
-    public class MechanismSimulationBinder : WindowBinder<MechanismSimulationWindow, IMechanismSimulation>
+    public class MechanismSimulationBinder : WindowBinder<MechanismSimulationWindow, IMechanismSimulation>, IDisposable
     {
+        private CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+        
+        private readonly SceneConfig _sceneConfig;
         private readonly IPoolingObjectsProvider _poolingObjectsProvider;
 
-        public MechanismSimulationBinder(IPoolingObjectsProvider poolingObjectsProvider)
+        protected override bool RebindEqual => true;
+
+        public MechanismSimulationBinder(IPoolingObjectsProvider poolingObjectsProvider, SceneConfig sceneConfig)
         {
             _poolingObjectsProvider = poolingObjectsProvider;
+            _sceneConfig = sceneConfig;
         }
 
         protected override void BindInternal(MechanismSimulationWindow view, IMechanismSimulation model)
         {
+            view.ReturnButton.OnClickAsObservable()
+                .Subscribe(ReturnBack)
+                .AddTo(view.BindingContainer);
+            
             view.MechanismButton.SetName(model.Mechanism.Name);
             view.MechanismButton.Button.OnClickAsObservable()
                 .Subscribe(SwitchBlastState)
@@ -54,6 +67,25 @@ namespace UI.Window.MechanismSimulation
             {
                 model.ShowMechanismPart(x.MechanismPart);
             }
+        }
+        
+        private void ReturnBack(Unit _)
+        {
+            ReturnBack().Forget();
+        }
+        
+        private async UniTaskVoid ReturnBack()
+        {
+            _cancellationTokenSource = _cancellationTokenSource.Refresh();
+            ShowController.Show<LoadingWindow, ParallelShowProcessor>();
+            await SceneUtil.LoadScene(_sceneConfig.StartSceneIndex, _cancellationTokenSource.Token,
+                                      _sceneConfig.SimulationSceneIndex);
+            ShowController.Show<StartWindow.StartWindow, ParallelShowProcessor, EmptyWindowModel>(new EmptyWindowModel());
+        }
+
+        void IDisposable.Dispose()
+        {
+            _cancellationTokenSource?.Dispose();
         }
     }
 }

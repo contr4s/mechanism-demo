@@ -33,7 +33,6 @@ namespace UI.Elements
 
         public void ResetDefaults()
         {
-            Button.onClick.RemoveAllListeners();
             IsSelected = false;
             image.color = defaultColor;
         }

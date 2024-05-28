@@ -9,12 +9,14 @@ namespace UI.Window.Common
         private readonly Dictionary<TWindow, TModel> _bindings = new Dictionary<TWindow, TModel>();
 
         public IWindowShowController ShowController { get; set; }
+        
+        protected virtual bool RebindEqual => false;
 
         public void Bind(TWindow view, TModel model)
         {
             if (_bindings.TryGetValue(view, out TModel boundModel))
             {
-                if (ReferenceEquals(boundModel, model))
+                if (!RebindEqual && ReferenceEquals(boundModel, model))
                 {
                     return;
                 }

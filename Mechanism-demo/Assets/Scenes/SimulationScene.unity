@@ -831,28 +831,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1512465239}
-  - component: {fileID: 1512465238}
+  - component: {fileID: 1512465240}
   m_Layer: 0
-  m_Name: SimulationInstaller
+  m_Name: MechanismInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1512465238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512465237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0173d521a1bf4a1882d70345757f508a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reductor: {fileID: 1108030637}
-  config: {fileID: 11400000, guid: 43796338c171ba944b123a5efbee7934, type: 2}
 --- !u!4 &1512465239
 Transform:
   m_ObjectHideFlags: 0
@@ -868,6 +854,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1726171037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1512465240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512465237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67067de7f9024936b351027f572c5826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reductor: {fileID: 1108030637}
 --- !u!1 &1726171035
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +899,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 1052554025}
-  - {fileID: 1512465238}
+  - {fileID: 1512465240}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:

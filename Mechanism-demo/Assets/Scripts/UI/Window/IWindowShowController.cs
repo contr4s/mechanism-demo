@@ -5,7 +5,7 @@ namespace UI.Window
     public interface IWindowShowController
     {
         void Setup(ICollection<WindowView> windows);
-        
+
         void Show<TWindow, TProcessor>() where TWindow : WindowView
                                          where TProcessor : IWindowShowProcessor;
 

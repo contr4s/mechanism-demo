@@ -6,6 +6,7 @@ using Cysharp.Threading.Tasks;
 using Extensions;
 using UI.Common;
 using UnityEngine;
+using Zenject;
 
 namespace UI.Window
 {
@@ -18,7 +19,7 @@ namespace UI.Window
         
         private Dictionary<Type, WindowView> _windowViews;
         private List<WindowView> _openedWindows;
-        
+
         public WindowShowController(IEnumerable<IWindowShowProcessor> showProcessors, BinderAggregator binderAggregator)
         {
             _binderAggregator = binderAggregator;

@@ -40,6 +40,10 @@ namespace UI.Common
             SelectedButton = null;
         }
         
-        public void Clear() => _buttons.Clear();
+        public void Clear()
+        {
+            SelectedButton = null;
+            _buttons.Clear();
+        }
     }
 }

@@ -27,16 +27,10 @@ namespace Camera.Settings
             return this;
         }
         
-        public FreeLookCamSettings SetDefaultOffsets()
+        public FreeLookCamSettings SetOffsets(Offsets offsets)
         {
-            _offsets = Offsets.Zero;
+            _offsets = offsets;
             return this;
-        }
-        
-        public FreeLookCamSettings SetParameters(CameraParameters parameters)
-        {
-            _offsets = parameters.Offsets;
-            return SetFov(parameters.Fov);
         }
 
         public void Apply(CinemachineFreeLook camera)

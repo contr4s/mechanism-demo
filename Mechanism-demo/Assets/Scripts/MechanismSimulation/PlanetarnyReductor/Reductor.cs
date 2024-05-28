@@ -11,13 +11,13 @@ namespace MechanismSimulation.PlanetarnyReductor
         [SerializeField] private float rotationSpeed;
         [SerializeField] private float defaultCameraFov;
         [SerializeField] private float blastCameraFov;
-        
-        private bool _isBlast;
-        
+
         [field: SerializeField] public string Name { get; private set; }
 
         public IReadOnlyCollection<IMechanismPart> Parts => parts;
         public float CameraFov { get; private set; }
+        public bool BlastState { get; private set; }
+
         public Transform Transform => transform;
 
         private void Awake()
@@ -32,8 +32,8 @@ namespace MechanismSimulation.PlanetarnyReductor
 
         public void SwitchBlastState()
         {
-            _isBlast = !_isBlast;
-            CameraFov = _isBlast ? blastCameraFov : defaultCameraFov;
+            BlastState = !BlastState;
+            CameraFov = BlastState ? blastCameraFov : defaultCameraFov;
         }
 
         private IEnumerator Rotate(CancellationToken ct)
